@@ -7,11 +7,11 @@ Application contains endpoints which allows you to :
 
 - [x] Changing books set / http://localhost:8080/books/selectDataset/  {plese select "api" or "json". You can change dataset in every moment}
 
-- [x] Getting all books /  http://localhost:8080/books
+- [x] Showing all books /  http://localhost:8080/books
 
 - [x] Checking book details /  http://localhost:8080/books/  {book isbn number}
 
-- [x] Getting all books by category /  http://localhost:8080/books/category/  {category}
+- [x] Showing all books by category /  http://localhost:8080/books/category/  {category}
 
 - [x] Creating books rating / http://localhost:8080/books/rating
 
