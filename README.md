@@ -1,37 +1,43 @@
+# Book Library
+
 Book library application allows user to look through two sets with books - one set is provided 
 from json file, and other from Books API. 
 
 Application contains endpoints which allows you to :
 
--Changing books set / http://localhost:8080/books/selectDataset/{plese select "api" or "json". You can change dataset in every moment}
+- [x] Changing books set / http://localhost:8080/books/selectDataset/  {plese select "api" or "json". You can change dataset in every moment}
 
--Getting all books /  http://localhost:8080/books
+- [x] Showing all books /  http://localhost:8080/books
 
--Checking book details /  http://localhost:8080/books/{book isbn number}
+- [x] Checking book details /  http://localhost:8080/books/  {book isbn number}
 
--Getting all books by category /  http://localhost:8080/books/category/{category}
+- [x] Showing all books by category /  http://localhost:8080/books/category/  {category}
 
--Creating books rating / http://localhost:8080/books/rating
+- [x] Creating books rating / http://localhost:8080/books/rating
 
-Framework - Spring Boot
-
+# Framework - Spring Boot
  I used spring boot framework because it has a built-in server. 
  In addition, in the springboot the configuration takes place 
  automatically, which in my opinion is the perfect solution for such a small project.
 
-Design patterns : DTO 
 
+# Design patterns : DTO 
  The design pattern I chose is DTO. it allows you to transfer the object without having to show all the fields.
 
-Testing frameworks : JUnit 5, Mockito
 
-Building :
+# Testing frameworks : JUnit 5, Mockito
 
- To build the project use following command: 'mvn clean install'
- 
-Running :
 
- After building the application run following command to start it: 'java -jar target/booklibrary-0.0.1-SNAPSHOT.jar'
- 
- Now you can test all endpoint.
+
+# Building :
+ To build the project use following command:
+ ```sh
+$ mvn clean install
+```
+
+# Running :
+ After building the application run following command to start it: 
+ ```sh
+$ java -jar target/booklibrary-0.0.1-SNAPSHOT.jar'
+```
 
