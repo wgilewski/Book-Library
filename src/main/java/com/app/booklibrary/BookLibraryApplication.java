@@ -4,12 +4,12 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class BooklibraryApplication {
+public class BookLibraryApplication {
 
     public static void main(String[] args)
     {
 
-        SpringApplication.run(BooklibraryApplication.class, args);
+        SpringApplication.run(BookLibraryApplication.class, args);
 
     }
 
