@@ -32,7 +32,7 @@ Application contains endpoints which allows you to :
 # Building :
  To build the project use following command:
  ```sh
-$ mvn clean install
+$ mvn clean package
 ```
 
 # Running :
