@@ -1,4 +1,4 @@
-package com.app.booklibrary.controller;
+package com.app.booklibrary.controllers;
 
 import com.app.booklibrary.model.dto.AuthorRatingDto;
 import com.app.booklibrary.model.dto.BookDto;

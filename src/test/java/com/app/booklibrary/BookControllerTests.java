@@ -1,6 +1,6 @@
 package com.app.booklibrary;
 
-import com.app.booklibrary.controller.BookController;
+import com.app.booklibrary.controllers.BookController;
 import com.app.booklibrary.model.dto.AuthorRatingDto;
 import com.app.booklibrary.model.dto.BookDto;
 import com.app.booklibrary.service.BookService;
