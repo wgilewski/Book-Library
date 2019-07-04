@@ -114,18 +114,18 @@ public class BookService
 
 
 
-    public Optional<BookDto> getBookDtoById(String id)
+    public Optional<BookDto> getBookDtoByIsbn(String isbn)
     {
-        if ( id == null)
+        if ( isbn == null)
         {
-            throw new MyException("ID VALUE IS NULL");
+            throw new MyException("ISBN VALUE IS NULL");
         }
 
         Optional<BookDto> book = books.getItems().stream()
                 .filter(book1 -> book1.getVolumeInfo().getIndustryIdentifiers()
                         .stream()
                         .anyMatch(industryIdentifiers -> industryIdentifiers.getType().equals("ISBN_13") &&
-                                industryIdentifiers.getIdentifier().equals(id)))
+                                industryIdentifiers.getIdentifier().equals(isbn)))
                 .findFirst()
                 .map(book1 -> mappers.fromBookToBookDto(book1));
 

@@ -36,7 +36,7 @@ public class BookController
     }
 
 
-    @GetMapping()
+    @GetMapping
     public ResponseEntity<List<BookDto>> getAllBooks()
     {
         List<BookDto> books = bookService.getAllBooksDto();
@@ -52,7 +52,7 @@ public class BookController
     @GetMapping("/{isbnNumber}")
     public ResponseEntity<BookDto> getBookByIsbnNumber(@PathVariable String isbnNumber)
     {
-        Optional<BookDto> book = bookService.getBookDtoById(isbnNumber);
+        Optional<BookDto> book = bookService.getBookDtoByIsbn(isbnNumber);
 
         if (book.isPresent())
         {

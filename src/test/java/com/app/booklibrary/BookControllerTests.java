@@ -65,7 +65,7 @@ public class BookControllerTests
     public void test3() throws Exception {
 
         Mockito
-                .when(bookService.getBookDtoById("12"))
+                .when(bookService.getBookDtoByIsbn("12"))
                 .thenReturn(Optional.of(BookDto.builder().isbn("12").title("A").build()));
 
 

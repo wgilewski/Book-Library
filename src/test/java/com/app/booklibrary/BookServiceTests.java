@@ -62,11 +62,11 @@ public class BookServiceTests
     public void test3()
     {
         Mockito
-                .when(bookService.getBookDtoById("1"))
+                .when(bookService.getBookDtoByIsbn("1"))
                 .thenReturn(Optional.of(
                         BookDto.builder().isbn("1").build())
                 );
-        BookDto bookDto = bookService.getBookDtoById("1").get();
+        BookDto bookDto = bookService.getBookDtoByIsbn("1").get();
         Assertions.assertEquals("1",bookDto.getIsbn());
     }
 
