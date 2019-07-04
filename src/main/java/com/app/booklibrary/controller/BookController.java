@@ -22,8 +22,17 @@ public class BookController
     {
         bookService.selectDataset(set);
 
-        return ResponseEntity.ok("DATASET HAS BEEN SELECTED PROPERLY \n" +
-                "NOW YOU CAN CHECK METHODS WITH SELECTED DATASET");
+        if (set.equals("api"))
+        {
+            return ResponseEntity.ok("DATASET FROM API HAS BEEN SELECTED PROPERLY \n" +
+                    "NOW YOU CAN CHECK ENDPOINTS WITH SELECTED DATASET");
+        }
+        else
+        {
+            return ResponseEntity.ok("DATASET FROM JSON HAS BEEN SELECTED PROPERLY \n" +
+                    "NOW YOU CAN CHECK ENDPOINTS WITH SELECTED DATASET");
+        }
+
     }
 
 
