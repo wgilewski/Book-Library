@@ -4,6 +4,9 @@ import com.app.booklibrary.model.dto.AuthorRatingDto;
 import com.app.booklibrary.model.dto.BookDto;
 import com.app.booklibrary.service.BookService;
 import lombok.RequiredArgsConstructor;
+import org.jsondoc.core.annotation.Api;
+import org.jsondoc.core.annotation.ApiMethod;
+import org.jsondoc.core.annotation.ApiPathParam;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,12 +16,19 @@ import java.util.Optional;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/books")
+@Api(
+        name = "Book API",
+        description = "Provides a list of methods that manage books")
 public class BookController
 {
     private final BookService bookService;
 
+
+
+
     @GetMapping("/selectDataset/{set}")
-    public ResponseEntity<String> selectDataset(@PathVariable String set)
+    @ApiMethod(description = "Select dataset from api or json file")
+    public ResponseEntity<String> selectDataset(@ApiPathParam(name = "set") @PathVariable String set)
     {
         bookService.selectDataset(set);
 
@@ -35,8 +45,8 @@ public class BookController
 
     }
 
-
     @GetMapping
+    @ApiMethod(description = "Get all books from chosen dataset")
     public ResponseEntity<List<BookDto>> getAllBooks()
     {
         List<BookDto> books = bookService.getAllBooksDto();
@@ -50,7 +60,8 @@ public class BookController
 
 
     @GetMapping("/{isbnNumber}")
-    public ResponseEntity<BookDto> getBookByIsbnNumber(@PathVariable String isbnNumber)
+    @ApiMethod(description = "Get one book from dataset by id number")
+    public ResponseEntity<BookDto> getBookByIsbnNumber(@ApiPathParam(name = "isbnNumber") @PathVariable String isbnNumber)
     {
         Optional<BookDto> book = bookService.getBookDtoByIsbn(isbnNumber);
 
@@ -63,7 +74,8 @@ public class BookController
 
 
     @GetMapping("/category/{category}")
-    public ResponseEntity<List<BookDto>> getBooksByCategory(@PathVariable String category)
+    @ApiMethod(description = "Get all books from dataset which contains category")
+    public ResponseEntity<List<BookDto>> getBooksByCategory(@ApiPathParam(name = "category") @PathVariable String category)
     {
 
         List<BookDto> books = bookService.getBooksDtoByCategory(category);
@@ -77,6 +89,7 @@ public class BookController
     }
 
     @GetMapping("/rating")
+    @ApiMethod(description = "Get author rating and sort descending")
     public ResponseEntity<List<AuthorRatingDto>> getAuthorsRating()
     {
         List<AuthorRatingDto> authorsRating = bookService.getAllAuthorsAverageRatingDto();
