@@ -1,3 +1,5 @@
+(I just learned how to create documentation using JAVADoc, so I decided to add it even if it's after the deadline.)
+
 # Book Library
 
 Book library application allows user to look through two sets with books - one set is provided 
